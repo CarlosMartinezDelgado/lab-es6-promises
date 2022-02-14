@@ -94,8 +94,9 @@ obtainInstruction('steak', 0)
     return obtainInstruction("steak", 7)
   }).then((step7)=>{
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`
+  }).then(()=>{
+  document.querySelector("#steak").innerHTML += `<li>${`Steak is ready`}</li>`
   });
-
 // Iteration 3 using async/await
 
 const brussels = async () => {
@@ -117,6 +118,8 @@ const brussels = async () => {
   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`
   const step7 = await obtainInstruction("brusselsSprouts", 7)
   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`
+  
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${`Broccoli is ready`}</li>`
 
   /*
   document.querySelector("#brusselsSprouts").innerHTML += `<li>${await obtainInstruction("brusselsSprouts", 0)}</li>`
