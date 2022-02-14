@@ -119,7 +119,7 @@ const brussels = async () => {
   const step7 = await obtainInstruction("brusselsSprouts", 7)
   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`
   
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${`Broccoli is ready`}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${`Brussels sprouts are ready`}</li>`
 
   /*
   document.querySelector("#brusselsSprouts").innerHTML += `<li>${await obtainInstruction("brusselsSprouts", 0)}</li>`
@@ -136,22 +136,22 @@ const brussels = async () => {
 brussels();
 
 // Bonus 2 - Promise all
-Promise.all ([obtainInstruction ("broccoli", 0),
+Promise.all ([
+obtainInstruction ("broccoli", 0),
 obtainInstruction ("broccoli", 1),
 obtainInstruction ("broccoli", 2),
 obtainInstruction ("broccoli", 3),
 obtainInstruction ("broccoli", 4),
 obtainInstruction ("broccoli", 5),
-obtainInstruction ("broccoli", 6)])
+obtainInstruction ("broccoli", 6)
+])
 .then((res) => {
-  console.log(res)
   res.forEach(element => {
-    document.querySelector("#broccoli").innerHTML += `<li>${element}</li>`
-    
+    document.querySelector("#broccoli").innerHTML += `<li>${element}</li>`;
   })
+  res.push(document.querySelector("#broccoli").innerHTML += `<li>${`Broccoli is ready`}</li>`)
+})
   .catch ((err) => {
     console.log(err)
 
   });
-})
-// ...
