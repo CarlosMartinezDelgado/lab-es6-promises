@@ -133,4 +133,22 @@ const brussels = async () => {
 brussels();
 
 // Bonus 2 - Promise all
+Promise.all ([obtainInstruction ("broccoli", 0),
+obtainInstruction ("broccoli", 1),
+obtainInstruction ("broccoli", 2),
+obtainInstruction ("broccoli", 3),
+obtainInstruction ("broccoli", 4),
+obtainInstruction ("broccoli", 5),
+obtainInstruction ("broccoli", 6)])
+.then((res) => {
+  console.log(res)
+  res.forEach(element => {
+    document.querySelector("#broccoli").innerHTML += `<li>${element}</li>`
+    
+  })
+  .catch ((err) => {
+    console.log(err)
+
+  });
+})
 // ...
